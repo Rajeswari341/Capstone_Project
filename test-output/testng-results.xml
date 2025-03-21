@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-21T18:08:52 IST" name="Suite" finished-at="2025-03-21T18:11:16 IST" duration-ms="143668">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:MyRunner.LoginStepsRunnerTestng@7674f035]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-03-21T18:08:52 IST" name="Test" finished-at="2025-03-21T18:11:16 IST" duration-ms="143668">
+      <class name="TestCases.UpdateCartTest">
+        <test-method is-config="true" signature="setupClass()[pri:0, instance:TestCases.UpdateCartTest@173ed316]" started-at="2025-03-21T18:10:54 IST" name="setupClass" finished-at="2025-03-21T18:10:54 IST" duration-ms="56" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupClass -->
+        <test-method signature="updateCartTest()[pri:0, instance:TestCases.UpdateCartTest@173ed316]" started-at="2025-03-21T18:10:54 IST" name="updateCartTest" finished-at="2025-03-21T18:11:01 IST" duration-ms="7483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateCartTest -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestCases.UpdateCartTest@173ed316]" started-at="2025-03-21T18:11:01 IST" name="tearDownClass" finished-at="2025-03-21T18:11:01 IST" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- TestCases.UpdateCartTest -->
+      <class name="TestCases.RegisterPageTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:TestCases.RegisterPageTest@2e6a8155]" started-at="2025-03-21T18:08:53 IST" name="setup" finished-at="2025-03-21T18:09:05 IST" duration-ms="12749" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="registerNewUserUsingRegularPOM()[pri:0, instance:TestCases.RegisterPageTest@2e6a8155]" started-at="2025-03-21T18:09:05 IST" name="registerNewUserUsingRegularPOM" finished-at="2025-03-21T18:09:20 IST" duration-ms="14569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerNewUserUsingRegularPOM -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.RegisterPageTest@2e6a8155]" started-at="2025-03-21T18:09:20 IST" name="tearDown" finished-at="2025-03-21T18:09:27 IST" duration-ms="6664" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.RegisterPageTest -->
+      <class name="TestCases.CheckOutPageTest">
+        <test-method is-config="true" signature="setupClass()[pri:0, instance:TestCases.CheckOutPageTest@25ce9dc4]" started-at="2025-03-21T18:11:01 IST" name="setupClass" finished-at="2025-03-21T18:11:04 IST" duration-ms="2625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupClass -->
+        <test-method signature="CheckOut()[pri:0, instance:TestCases.CheckOutPageTest@25ce9dc4]" started-at="2025-03-21T18:11:04 IST" name="CheckOut" finished-at="2025-03-21T18:11:12 IST" duration-ms="7978" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckOut -->
+        <test-method is-config="true" signature="close()[pri:0, instance:TestCases.CheckOutPageTest@25ce9dc4]" started-at="2025-03-21T18:11:12 IST" name="close" finished-at="2025-03-21T18:11:16 IST" duration-ms="4074" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- TestCases.CheckOutPageTest -->
+      <class name="MyRunner.LoginStepsRunnerTestng">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:MyRunner.LoginStepsRunnerTestng@7674f035]" started-at="2025-03-21T18:09:27 IST" name="setUpClass" finished-at="2025-03-21T18:09:27 IST" duration-ms="853" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4ad8d36f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:MyRunner.LoginStepsRunnerTestng@7674f035]" started-at="2025-03-21T18:09:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-03-21T18:09:55 IST" duration-ms="27317" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with valid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login to JPetStore"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:MyRunner.LoginStepsRunnerTestng@7674f035]" started-at="2025-03-21T18:09:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-03-21T18:10:16 IST" duration-ms="21108" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login with invalid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login to JPetStore"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:MyRunner.LoginStepsRunnerTestng@7674f035]" started-at="2025-03-21T18:10:16 IST" name="tearDownClass" finished-at="2025-03-21T18:10:16 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- MyRunner.LoginStepsRunnerTestng -->
+      <class name="TestCases.AddToCartPageTest">
+        <test-method is-config="true" signature="setupClass(java.lang.String)[pri:0, instance:TestCases.AddToCartPageTest@69e153c5]" started-at="2025-03-21T18:10:16 IST" name="setupClass" finished-at="2025-03-21T18:10:30 IST" duration-ms="14554" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupClass -->
+        <test-method signature="addBirdToCartAndReturnHome()[pri:1, instance:TestCases.AddToCartPageTest@69e153c5]" started-at="2025-03-21T18:10:30 IST" name="addBirdToCartAndReturnHome" finished-at="2025-03-21T18:10:38 IST" duration-ms="7950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addBirdToCartAndReturnHome -->
+        <test-method signature="addCatToCartAndReturnHome()[pri:2, instance:TestCases.AddToCartPageTest@69e153c5]" started-at="2025-03-21T18:10:38 IST" name="addCatToCartAndReturnHome" finished-at="2025-03-21T18:10:46 IST" duration-ms="7733" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCatToCartAndReturnHome -->
+        <test-method signature="addDogToCartAndReturnHome()[pri:3, instance:TestCases.AddToCartPageTest@69e153c5]" started-at="2025-03-21T18:10:46 IST" name="addDogToCartAndReturnHome" finished-at="2025-03-21T18:10:54 IST" duration-ms="7489" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addDogToCartAndReturnHome -->
+        <test-method is-config="true" signature="teardownClass()[pri:0, instance:TestCases.AddToCartPageTest@69e153c5]" started-at="2025-03-21T18:10:54 IST" name="teardownClass" finished-at="2025-03-21T18:10:54 IST" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownClass -->
+      </class> <!-- TestCases.AddToCartPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

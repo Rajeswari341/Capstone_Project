@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="TestCases.UpdateCartTest">
+        <methods>
+          <include name="updateCartTest"/>
+          <include name="setupClass"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- TestCases.UpdateCartTest -->
+      <class name="TestCases.AddToCartPageTest">
+        <methods>
+          <include name="addCatToCartAndReturnHome"/>
+          <include name="teardownClass"/>
+          <include name="setupClass"/>
+          <include name="addDogToCartAndReturnHome"/>
+          <include name="addBirdToCartAndReturnHome"/>
+        </methods>
+      </class> <!-- TestCases.AddToCartPageTest -->
+      <class name="TestCases.CheckOutPageTest">
+        <methods>
+          <include name="CheckOut"/>
+          <include name="setupClass"/>
+          <include name="close"/>
+        </methods>
+      </class> <!-- TestCases.CheckOutPageTest -->
+      <class name="MyRunner.LoginStepsRunnerTestng">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="1"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- MyRunner.LoginStepsRunnerTestng -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
