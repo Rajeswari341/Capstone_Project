@@ -10,11 +10,10 @@
 
     <name>CapstoneProject</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source> <!-- Use Java 8 or higher -->
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
 
     <dependencies>
 
@@ -47,21 +46,29 @@
 
         <!-- Cucumber -->
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>7.15.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>7.15.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-core</artifactId>
-            <version>7.15.0</version>
-        </dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-java</artifactId>
+		<version>7.18.0</version>
+		</dependency>
+
+		<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-core</artifactId>
+		<version>7.18.0</version>
+		</dependency>
+
+		<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-junit</artifactId>
+		<version>7.18.0</version>
+		<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-testng</artifactId>
+		<version>7.14.0</version>
+		</dependency>
 
         <!-- Extent Reports -->
         <dependency>
@@ -69,27 +76,7 @@
             <artifactId>extentreports</artifactId>
             <version>5.1.1</version>
         </dependency>
-
-        <!-- Optional: TestNG (if needed elsewhere, not for this runner) -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.4.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-    		<groupId>org.apache.logging.log4j</groupId>
-    		<artifactId>log4j-core</artifactId>
-   			 <version>2.20.0</version> <!-- or the version you need -->
-		</dependency>
-
-	<!-- Log4j2 API Dependency -->
-	<dependency>
-    	<groupId>org.apache.logging.log4j</groupId>
-    	<artifactId>log4j-api</artifactId>
-    	<version>2.20.0</version>
-	</dependency>
-
+   
     </dependencies>
     
     <build>
