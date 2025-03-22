@@ -24,6 +24,7 @@ public class JPetBaseClass {
 	public static WebDriverWait wait;
 	public static File src;
 	
+	//This method is used to invoke the browser
     public static void invokeBrowser(String browser) {
         if (browser.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
