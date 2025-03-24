@@ -1,26 +1,48 @@
 package StepDef;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import CommonFiles.ExtentReport;
 import CommonFiles.JPetBaseClass;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import java.time.Duration;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import io.cucumber.java.Scenario;
 
 public class Hooks extends JPetBaseClass {
+	public static ExtentTest test;
 
-    @Before   // Cucumber hook, runs before every scenario
-    public void setup() {  
-        invokeBrowser("Firefox");  // Launch browser
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        ExtentReport.getInstance(); // Start report
-        System.out.println("Setup completed in Hooks");
+    @Before   // Runs before each scenario
+    public void setup(Scenario scenario) {
+        try {
+            // Initialize ExtentReports if not already done
+            ExtentReport.getInstance();
+
+            // Create a new ExtentTest for each scenario
+            test = ExtentReport.createTest(scenario.getName());
+
+            System.out.println("Started ExtentTest for: " + scenario.getName());
+            test.log(Status.INFO, "Starting scenario: " + scenario.getName());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    @After    // Cucumber hook, runs after every scenario
-    public void tearDown() throws InterruptedException {
-        ExtentReport.getInstance().flush(); // End report
-        closeBrowser(); // Close browser
-        System.out.println("Teardown completed in Hooks");
+    @After    // Runs after each scenario
+    public void tearDown(Scenario scenario) {
+        try {
+            if (scenario.isFailed()) {
+                test.log(Status.FAIL, "Scenario Failed: " + scenario.getName());
+                // Optionally attach a screenshot here
+            } else {
+                test.log(Status.PASS, "Scenario Passed: " + scenario.getName());
+            }
+
+            System.out.println("Finished scenario: " + scenario.getName());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

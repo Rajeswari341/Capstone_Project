@@ -2,10 +2,10 @@ package TestCases;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -20,7 +20,7 @@ import Pages.RegisterPage;
 public class RegisterPageTest extends JPetBaseClass {
 
     WebDriver driver;
-    WebDriverWait wait;
+    FluentWait<WebDriver> fluentWait;
     Properties prop;
     ExtentTest test;
 
@@ -31,7 +31,13 @@ public class RegisterPageTest extends JPetBaseClass {
     public void setup(String browser) throws IOException {
         invokeBrowser(browser);
         driver = JPetBaseClass.driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // FluentWait setup
+        fluentWait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(15))
+                .pollingEvery(Duration.ofSeconds(2))
+                .ignoring(NoSuchElementException.class);
+
         prop = loadProperties();
         registerPage = new RegisterPage(driver);
         ExtentReport.getInstance();
@@ -39,26 +45,38 @@ public class RegisterPageTest extends JPetBaseClass {
 
     @Test
     public void registerNewUserUsingRegularPOM() throws InterruptedException, IOException {
-        
+
         test = ExtentReport.createTest("Register New User Test");
 
         // Navigate to the website
         driver.get(prop.getProperty("url"));
-        wait.until(ExpectedConditions.urlToBe(prop.getProperty("url")));
+        fluentWait.until(driver -> driver.getCurrentUrl().equals(prop.getProperty("url")));
         test.log(Status.INFO, "Navigated to JPetStore home page");
 
         // Click on Sign In
-        WebElement signInLink = registerPage.getSigninLink();
-        wait.until(ExpectedConditions.elementToBeClickable(signInLink)).click();
-        Thread.sleep(500);
+        WebElement signInLink = fluentWait.until(driver -> {
+            WebElement element = registerPage.getSigninLink();
+            if (element.isDisplayed() && element.isEnabled()) {
+                return element;
+            } else {
+                return null;
+            }
+        });
+        signInLink.click();
 
         screenShot("SignPage");
         test.log(Status.INFO, "Captured Sign In page screenshot");
 
         // Click Register button
-        WebElement registerBtn = registerPage.getRegisterButton();
-        wait.until(ExpectedConditions.elementToBeClickable(registerBtn)).click();
-        Thread.sleep(500);
+        WebElement registerBtn = fluentWait.until(driver -> {
+            WebElement element = registerPage.getRegisterButton();
+            if (element.isDisplayed() && element.isEnabled()) {
+                return element;
+            } else {
+                return null;
+            }
+        });
+        registerBtn.click();
 
         test.log(Status.INFO, "Navigated to Registration page");
 
@@ -94,30 +112,30 @@ public class RegisterPageTest extends JPetBaseClass {
         test.log(Status.INFO, "Captured filled Registration form screenshot");
 
         // Submit registration form
-        registerPage.getSubmit().click();
+        WebElement submitBtn = fluentWait.until(driver -> {
+            WebElement element = registerPage.getSubmit();
+            if (element.isDisplayed() && element.isEnabled()) {
+                return element;
+            } else {
+                return null;
+            }
+        });
+     // Click Register Submit
+        submitBtn.click();
         test.log(Status.INFO, "Submitted registration form");
 
-        Thread.sleep(2000); // Better to replace with wait for element, keeping it for now
-
-        // Capture page after submission
-        screenShot("PostRegistrationPage");
-        test.log(Status.INFO, "Captured post-registration confirmation page screenshot");
-
-        // Verify successful registration
+        // Wait for page navigation or an element that confirms registration worked
         try {
             Assert.assertTrue(driver.getCurrentUrl().contains("Catalog.action"), "Home page navigation failed after registration");
             test.log(Status.PASS, "Registration successful, navigated to home page");
         } catch (AssertionError e) {
             test.log(Status.PASS, "Navigation to home page failed after registration, retrying...");
             driver.get(prop.getProperty("url"));
-            wait.until(ExpectedConditions.urlToBe(prop.getProperty("url")));
             test.log(Status.INFO, "Retried navigation to home page");
         }
     }
-
     @AfterMethod
     public void tearDown() throws InterruptedException {
         ExtentReport.getInstance().flush();
-        closeBrowser();
     }
 }

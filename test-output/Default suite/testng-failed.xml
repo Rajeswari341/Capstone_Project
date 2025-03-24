@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="MyRunner.LoginStepsRunnerTestng">
+      <class name="TestCases.RegisterPageTest">
         <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="1"/>
-          <include name="tearDownClass"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="registerNewUserUsingRegularPOM"/>
         </methods>
-      </class> <!-- MyRunner.LoginStepsRunnerTestng -->
+      </class> <!-- TestCases.RegisterPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

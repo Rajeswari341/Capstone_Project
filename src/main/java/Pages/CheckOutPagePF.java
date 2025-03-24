@@ -67,6 +67,9 @@ public class CheckOutPagePF {
 	@FindBy(xpath="//a[text()='Confirm']")
 	private WebElement confirm;
 	
+	@FindBy(xpath="//a[text()='Sign Out']")
+	private WebElement SignOut;
+	
 	public WebElement getProceed() {
 		return proceed;
 	}
@@ -134,6 +137,9 @@ public class CheckOutPagePF {
 	}
 	public WebElement getConfirm() {
 		return confirm;
+	}
+	public WebElement getSignout() {
+		return SignOut;
 	}
 
 }

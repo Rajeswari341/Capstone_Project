@@ -22,23 +22,16 @@ public class AddToCartPageTest extends JPetBaseClass {
     WebDriver driver;
     WebDriverWait wait;
     Properties prop;
-
-    LoginpPage loginPage;
     AddToCartPage addtocart;
 
     ExtentTest test;   // Extent Report Test instance for current test case
 
     @BeforeClass
-    @Parameters({"browser"})
-    public void setupClass(String browser) throws IOException, InterruptedException {
-
-        System.out.println("BeforeClass: Launching browser and logging in");
+    public void setupClass() throws IOException, InterruptedException {
 
         // Initialize Extent Reports instance
         ExtentReport.getInstance();
-
-        // Launch the browser and initialize driver
-        invokeBrowser(browser);
+        
         driver = JPetBaseClass.driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -46,23 +39,8 @@ public class AddToCartPageTest extends JPetBaseClass {
         prop = loadProperties();
 
         // Initialize Page Objects
-        loginPage = new LoginpPage(driver);
         addtocart = new AddToCartPage(driver);
-
-        // Login to JPetStore before running Add to Cart tests
-        driver.get(prop.getProperty("url"));
-        wait.until(ExpectedConditions.urlToBe(prop.getProperty("url")));
-        System.out.println("Navigated to JPetStore URL");
-
-        loginPage.getSigninLink().click();
-        loginPage.getUsername().clear();
-        loginPage.getPassword().clear();
-        Thread.sleep(1000);
-
-        loginPage.getUsername().sendKeys(prop.getProperty("username"));
-        loginPage.getPassword().sendKeys(prop.getProperty("password"));
-        loginPage.getLoginButton().click();
-        System.out.println("Login successful!");
+       
 
   }
 
@@ -172,8 +150,7 @@ public class AddToCartPageTest extends JPetBaseClass {
 
     @AfterClass
     public void teardownClass() {
-        System.out.println("AfterClass: Closing browser and flushing report");
-
+       
         // Flush Extent Report results after class execution
         ExtentReport.getInstance().flush();
 

@@ -15,7 +15,7 @@ public class ExtentReport {
     }
 
     private static ExtentReports createInstance() {
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("JPetExtent-report.html");
+    	ExtentSparkReporter sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/ExtentReports/JPetExtent-report.html");
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
         return extent;

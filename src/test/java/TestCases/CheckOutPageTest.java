@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -44,7 +45,9 @@ public class CheckOutPageTest extends JPetBaseClass{
 	    	Thread.sleep(1000);
 	    	WebElement drop=checkoutpage.getDropdown();
 	    	drop.click();
-	    	drop.sendKeys(Keys.DOWN,Keys.DOWN,Keys.ENTER);
+	    	Actions actions = new Actions(driver);
+	    	actions.moveToElement(drop).click().perform();
+	    	actions.sendKeys(Keys.DOWN,Keys.DOWN,Keys.ENTER).build().perform();
 	    	Thread.sleep(300);
 	    	checkoutpage.getCardNumber().clear();
 	    	checkoutpage.getCardNumber().sendKeys(ReadFromExcel.getCellData(0, 1));
@@ -110,6 +113,8 @@ public class CheckOutPageTest extends JPetBaseClass{
 			}
 
 			test.log(Status.PASS, "Order confirmation message displayed successfully");
+			
+			checkoutpage.getSignout().click();
 
 	    }
 	    
