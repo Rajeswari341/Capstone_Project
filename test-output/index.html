@@ -266,7 +266,7 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;${browser}&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;TestCases.RegisterPageTest&quot;/&gt;
       &lt;class name=&quot;MyRunner.LoginStepsRunnerTestng&quot;/&gt;
@@ -324,35 +324,35 @@ data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'registerNewUserUsingRegularPOM')
 data.setCell(0, 2, 'TestCases.RegisterPageTest')
-data.setCell(0, 3, 18427);
+data.setCell(0, 3, 33337);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'addCatToCartAndReturnHome')
-data.setCell(1, 2, 'TestCases.AddToCartPageTest')
-data.setCell(1, 3, 10629);
+data.setCell(1, 1, 'CheckOut')
+data.setCell(1, 2, 'TestCases.CheckOutPageTest')
+data.setCell(1, 3, 19270);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'addBirdToCartAndReturnHome')
 data.setCell(2, 2, 'TestCases.AddToCartPageTest')
-data.setCell(2, 3, 10350);
+data.setCell(2, 3, 13298);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'CheckOut')
-data.setCell(3, 2, 'TestCases.CheckOutPageTest')
-data.setCell(3, 3, 8639);
+data.setCell(3, 1, 'runScenario')
+data.setCell(3, 2, 'MyRunner.LoginStepsRunnerTestng')
+data.setCell(3, 3, 11931);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'addDogToCartAndReturnHome')
+data.setCell(4, 1, 'addCatToCartAndReturnHome')
 data.setCell(4, 2, 'TestCases.AddToCartPageTest')
-data.setCell(4, 3, 7961);
+data.setCell(4, 3, 10823);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'updateCartTest')
 data.setCell(5, 2, 'TestCases.UpdateCartTest')
-data.setCell(5, 3, 7687);
+data.setCell(5, 3, 9324);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'runScenario')
-data.setCell(6, 2, 'MyRunner.LoginStepsRunnerTestng')
-data.setCell(6, 3, 6560);
+data.setCell(6, 1, 'addDogToCartAndReturnHome')
+data.setCell(6, 2, 'TestCases.AddToCartPageTest')
+data.setCell(6, 3, 8949);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'runScenario')
 data.setCell(7, 2, 'MyRunner.LoginStepsRunnerTestng')
-data.setCell(7, 3, 5070);
+data.setCell(7, 3, 5996);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -385,88 +385,88 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">TestCases.RegisterPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setup(firefox)</span>
+                <span class="method-name">setup(${browser})</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">registerNewUserUsingRegularPOM</span>
-                <span class="method-start">40089 ms</span>
+                <span class="method-start">16619 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">58776 ms</span>
+                <span class="method-start">50016 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">MyRunner.LoginStepsRunnerTestng</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@f96654)</span>
-                <span class="method-start">64842 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@7dc92a06)</span>
+                <span class="method-start">52594 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Login with invalid credentials", "Login to JPetStore")</span>
-                <span class="method-start">72462 ms</span>
+                <span class="method-start">55241 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Login with valid credentials", "Login to JPetStore")</span>
-                <span class="method-start">79038 ms</span>
+                <span class="method-start">61254 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">84131 ms</span>
+                <span class="method-start">73230 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCases.AddToCartPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">84447 ms</span>
+                <span class="method-start">73413 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">addBirdToCartAndReturnHome</span>
-                <span class="method-start">84456 ms</span>
+                <span class="method-start">73420 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">addCatToCartAndReturnHome</span>
-                <span class="method-start">94820 ms</span>
+                <span class="method-start">86729 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">addDogToCartAndReturnHome</span>
-                <span class="method-start">105487 ms</span>
+                <span class="method-start">97561 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardownClass</span>
-                <span class="method-start">113454 ms</span>
+                <span class="method-start">106515 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCases.UpdateCartTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">113650 ms</span>
+                <span class="method-start">106711 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">updateCartTest</span>
-                <span class="method-start">113771 ms</span>
+                <span class="method-start">106774 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">121463 ms</span>
+                <span class="method-start">116111 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCases.CheckOutPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">121703 ms</span>
+                <span class="method-start">116246 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">CheckOut</span>
-                <span class="method-start">125903 ms</span>
+                <span class="method-start">120704 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">close</span>
-                <span class="method-start">134558 ms</span>
+                <span class="method-start">139990 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
