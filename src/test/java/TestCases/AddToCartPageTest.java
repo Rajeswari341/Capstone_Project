@@ -3,23 +3,16 @@ package TestCases;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import CommonFiles.ExtentReport;
 import CommonFiles.JPetBaseClass;
 import Pages.AddToCartPage;
-import Pages.LoginpPage;
 
 public class AddToCartPageTest extends JPetBaseClass {
-
-    WebDriver driver;
     WebDriverWait wait;
     Properties prop;
     AddToCartPage addtocart;
@@ -31,8 +24,6 @@ public class AddToCartPageTest extends JPetBaseClass {
 
         // Initialize Extent Reports instance
         ExtentReport.getInstance();
-        
-        driver = JPetBaseClass.driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Load the test data properties
@@ -146,6 +137,7 @@ public class AddToCartPageTest extends JPetBaseClass {
 
         // Return to Main Menu (optional if not needed)
         test.log(Status.PASS, "Successfully added Dog to cart and returned to main menu");
+        System.out.println("All the Three items successfully added to cart");
     }
 
     @AfterClass

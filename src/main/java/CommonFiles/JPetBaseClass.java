@@ -1,7 +1,8 @@
 package CommonFiles;
 
-import java.io.File;
 import org.apache.poi.ss.usermodel.*;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -16,12 +17,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.io.Files;
 
 public class JPetBaseClass {
-	public static WebDriver driver;
-	public static WebDriverWait wait;
+	public static WebDriver driver=null;
 	public static File src;
 	
 	//This method is used to invoke the browser
@@ -33,7 +32,7 @@ public class JPetBaseClass {
         } else if (browser.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
         } else {
-            System.out.println("Invalid Browser");
+            System.out.println("Default Browser");
             driver = new ChromeDriver();
         }
 

@@ -3,23 +3,17 @@ package TestCases;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import CommonFiles.ExtentReport;
 import CommonFiles.JPetBaseClass;
 import Pages.RegisterPage;
 
 public class RegisterPageTest extends JPetBaseClass {
-
-    WebDriver driver;
     WebDriverWait wait;
     Properties prop;
     ExtentTest test;
@@ -30,7 +24,6 @@ public class RegisterPageTest extends JPetBaseClass {
     @Parameters({"browser"})
     public void setup(String browser) throws IOException {
         invokeBrowser(browser);
-        driver = JPetBaseClass.driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         prop = loadProperties();
         registerPage = new RegisterPage(driver);

@@ -1,24 +1,15 @@
 package TestCases;
 
 import java.io.IOException;
-import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import CommonFiles.ExtentReport;
 import CommonFiles.JPetBaseClass;
 import Pages.UpdateCartPF;
 
 public class UpdateCartTest extends JPetBaseClass {
-    WebDriver driver;
     UpdateCartPF updatecart;
-
     ExtentTest test;  // For Extent Report test logs
 
     @BeforeClass
@@ -26,8 +17,6 @@ public class UpdateCartTest extends JPetBaseClass {
 
         // Initialize Extent Report Instance
         ExtentReport.getInstance();
-        driver = JPetBaseClass.driver;
-
         // Initialize Page Factory for Update Cart Page
         updatecart = new UpdateCartPF(driver);
 
@@ -75,12 +64,11 @@ public class UpdateCartTest extends JPetBaseClass {
 
         // Final Pass log in ExtentReport
         test.log(Status.PASS, "Cart updated successfully - quantities modified and item removed");
+        System.out.println("Updated the cart successfully by editing the quantity and removing one item");
     }
 
     @AfterClass
     public void tearDownClass() throws InterruptedException {
-
-        System.out.println("AfterClass: Flushing reports and closing browser");
 
         // Flush Extent Report after test class execution
         ExtentReport.getInstance().flush();

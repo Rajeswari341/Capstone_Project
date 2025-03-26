@@ -1,6 +1,5 @@
 package StepDef;
 
-import CommonFiles.ExtentReport;
 import CommonFiles.JPetBaseClass;
 import Pages.LoginpPage;
 import io.cucumber.java.en.*;

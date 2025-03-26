@@ -2,27 +2,21 @@ package TestCases;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import Pages.CheckOutPagePF;
 import CommonFiles.ExtentReport;
 import CommonFiles.JPetBaseClass;
 
 public class CheckOutPageTest extends JPetBaseClass{
-	 WebDriver driver;
 	 WebDriverWait wait;
 	 CheckOutPagePF checkoutpage;
 	 ExtentTest test;
@@ -31,7 +25,6 @@ public class CheckOutPageTest extends JPetBaseClass{
 	 @BeforeClass
 	 public void setupClass() throws IOException {
 		 ExtentReport.getInstance();
-	     driver = JPetBaseClass.driver;
 	     wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	     checkoutpage = new CheckOutPagePF(driver);
 	     ReadFromExcel.setExcelFile(System.getProperty("user.dir") + "/JPetShippingDetails.xlsx", "Sheet1");
@@ -84,6 +77,7 @@ public class CheckOutPageTest extends JPetBaseClass{
 	    	Thread.sleep(300);
 	    	checkoutpage.getSubmit().click();
 	    	Thread.sleep(300);
+	    	screenShot("Page after entering the shipping details");
 	    	
 	    	checkoutpage.getAddress_1().clear();
 	    	checkoutpage.getAddress_1().sendKeys(ReadFromExcel.getCellData(9, 1));
